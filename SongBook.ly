@@ -17,12 +17,15 @@
   tagline = ##f
 }
 
+\include "xmastree.ly"
 \include "fairytale.ly"
 \include "gaudete.ly"
 \include "grymg.ly"
 \include "goodking.ly"
 \include "gower.ly"
 \include "herewecome.ly"
+\include "rudolph.ly"
+\include "wassail.ly"
  
 
 \bookpart {
@@ -53,6 +56,46 @@
 
   }
   \markuplist \table-of-contents
+}
+
+\bookpart {
+  \header {
+    title = "O Christmas Tree"
+    instrument = "Piano"
+  }
+  \tocItem \markup "O Christmas Tree"
+  \score {
+    <<
+      \new ChordNames \xmastree_chordNames
+      \new ChoirStaff <<
+        \new Staff <<
+          \new Voice { \voiceOne \xmastree_melody }
+          \addlyrics { \xmastree_verseOne }
+          \addlyrics { \xmastree_verseTwo }
+          \addlyrics { \xmastree_verseThree }
+          \new Voice { \voiceTwo \xmastree_accRight }
+        >>
+        \new Staff { \clef bass \xmastree_accLeft }
+      >>
+    >>
+    \layout { }
+  }
+}
+
+\bookpart {
+  \header {
+    title = "O Christmas Tree"
+    instrument = "Chords"
+  }
+  \score {
+    <<
+      \new ChordNames \xmastree_chordNames
+      \new Staff  { \xmastree_melody }
+      \addlyrics { \xmastree_verseOne }
+
+    >>
+  }
+  \xmastree_lyrics
 }
 
 \bookpart {
@@ -145,13 +188,8 @@
   \score {
     <<
       \new ChordNames \grymg_chordNames
-      \new ChoirStaff <<
-        \new Staff <<
-          \new Voice { \voiceOne \grymg_melody }
-          \addlyrics { \grymg_verseOne }
-
-        >>
-      >>
+      \new Staff { \grymg_melody }
+      \addlyrics { \grymg_verseOne }
     >>
   }
   
@@ -188,12 +226,8 @@
   \score {
     <<
       \new ChordNames \goodking_chordNames
-      \new ChoirStaff <<
-        \new Staff <<
-          \new Voice { \voiceOne \goodking_melody }
-          \addlyrics { \goodking_verseOne }
-        >>
-      >>
+      \new Staff {  \goodking_melody }
+      \addlyrics { \goodking_verseOne }
     >>
   }
    \header { 
@@ -260,15 +294,71 @@
   \score {
     <<
       \new ChordNames \herewecome_chordNames
-      \new ChoirStaff <<
-        \new Staff <<
-          \new Voice { \voiceOne \herewecome_melody }
-          \addlyrics { \herewecome_verseOne }
-        >>
-      >>
+      \new Staff { \herewecome_melody }
+      \addlyrics { \herewecome_verseOne }
     >>
     \layout { }
   }
   \herewecome_lyrics
 
+}
+
+\bookpart {
+  \header {
+    title = "Rudolph the Red-nosed Reindeer"
+    instrument = "Chords"
+  }
+  \tocItem \markup "Rudolph the Red-nosed Reindeer"
+  \score {
+    <<
+      \new ChordNames \rudolph_chordNames
+      \new Staff { \rudolph_melody }
+      \addlyrics { \rudolph_verseOne }
+    >>
+    \layout { }
+  }
+}
+
+\bookpart {
+  \header {
+    title = "Wassail Song"
+    composer = "Traditional"
+    instrument = "Piano"
+  }
+  \tocItem \markup "Wassail Song"
+  \score {
+    <<
+      \new ChordNames \wassail_chordNames
+      \new Staff { \wassail_tenor }
+      
+  
+        \addlyrics { \wassail_verseOne }
+        \addlyrics { \wassail_verseTwo }
+        \addlyrics { \wassail_verseThree }
+        \addlyrics { \wassail_verseFour }
+        \addlyrics { \wassail_verseFive }
+      \new Staff <<
+        \new Voice { \voiceOne \wassail_basso }
+        \new Voice { \voiceOne \wassail_bass }
+      >>
+    >>    
+  
+  }
+}
+
+\bookpart {
+  \header {
+    title = "Wassail Song"
+    composer = "Traditional"
+    instrument = "Chords"
+  }
+  \score {
+    <<
+      \new ChordNames \wassail_chordNames
+      \new Staff { \wassail_tenor }
+      \addlyrics { \wassail_verseOne }
+    >>    
+  
+  }
+  \wassail_lyrics
 }

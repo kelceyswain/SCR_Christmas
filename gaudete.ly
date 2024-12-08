@@ -8,7 +8,7 @@ gaudete_global = {
 gaudete_melody = \relative c'' {
   \gaudete_global
   g4 | g f g8 a  bf4 | bf8 a4 g8 f4 f | f g a4. g8 | f4 g8 a4 g8 f4 | g2. \bar "||"
-  g8 d' d c bf a g4 |  a8 bf a g f4 d | g8 bf a bf c a f4 | bf8 g f a g4 g \bar "|."
+  g8 d' | d c bf a g4  a8 bf | a g f4 d  g8 bf | a bf c a f4 bf8 g | f a g4 g \bar "|."
 }
 
 gaudete_verseOne = \lyricmode {
