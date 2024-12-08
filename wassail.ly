@@ -114,7 +114,7 @@ wassail_lyrics = \markup \large {
       \line { "He built up a barn for to keep his cow warm," }
       \line { "And a drop of strong beer will do us now harm." }
       \line { \italic "To you a wassail, aye and joy come to our jolly wassail." }
-      \line { "\n" }
+      \line { "\n"  }
       \line { \bold "4. So here's to the maid in the lily-shite smock," }
       \line { "Who tripped to the door and pulled back the lock." }
       \line { "Who tripped to the door and pulled back on the pin," }
