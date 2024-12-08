@@ -1,3 +1,6 @@
+\version "2.22.1"
+\language "english"
+
 goodking_global = {
   \key g \major
   \time 4/4
@@ -120,4 +123,45 @@ goodking_lyrics = \markup \large {
     \line { "Ye who now will bless the poor, shall yourselves find blessing." }
     \line { "\n" }
   }
+}
+
+\bookpart {
+  \tocItem \markup "Good King Wenceslas"
+  \score {
+    <<
+      %\new ChordNames \chordNames
+      %\new FretBoards \chordNames
+      \new ChoirStaff <<
+        \new Staff <<
+          \new Voice { \voiceOne \goodking_melody }
+          \addlyrics { \goodking_verseOne }
+          \addlyrics { \goodking_verseTwo }
+          \addlyrics { \goodking_verseThree }
+          \addlyrics { \goodking_verseFour }
+          \addlyrics { \goodking_verseFive }
+          \new Voice { \voiceTwo \goodking_accRight }
+        >>
+        \new Staff { \clef bass \goodking_accLeft }
+      >>
+    >>
+  }
+  \header { 
+    title = "Good King Wenceslas"
+    instrument = "Piano" 
+  }
+}
+
+\bookpart {
+  \score {
+    <<
+      \new ChordNames \goodking_chordNames
+      \new Staff {  \goodking_melody }
+      \addlyrics { \goodking_verseOne }
+    >>
+  }
+   \header { 
+    title = "Good King Wenceslas"
+    instrument = "Chords" 
+  }
+  \goodking_lyrics
 }

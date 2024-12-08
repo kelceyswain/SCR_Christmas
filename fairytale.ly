@@ -1,3 +1,6 @@
+\version "2.22.1"
+\language "english"
+
 fairytale_global = {
   \key c \major
   \time 4/4
@@ -324,4 +327,39 @@ fairytale_lyrics = \markup \large {
     \line { \italic "And the bells were ringing out for Christmas day." }
 
   }
+}
+
+\bookpart {
+  \header {
+    title = "Fairytale of New York"
+    composer = "Shane MacGowan & Jem Finer"
+    instrument = "Piano"
+  }
+  \tocItem \markup "Fairytale of New York"
+  \score {
+    <<
+      \new ChordNames \fairytale_chordNames
+      \new ChoirStaff <<
+        \new Staff <<
+          \new Voice { \voiceOne \fairytale_melody }
+          \addlyrics { \fairytale_verseOne }
+          \addlyrics { \fairytale_verseTwo }
+          \new Voice { \voiceTwo \fairytale_accRight }
+        >>
+        \new Staff { \clef bass \fairytale_accLeft }
+      >>
+    >>
+    \layout { }
+  }
+
+}
+
+\bookpart {
+  \header {
+    title = "Fairytale of New York"
+    composer = "Shane MacGowan & Jem Finer"
+    instrument = "Lyrics"
+  }
+
+  \fairytale_lyrics
 }

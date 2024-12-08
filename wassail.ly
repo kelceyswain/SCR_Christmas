@@ -1,3 +1,6 @@
+\version "2.22.1"
+\language "english"
+
 wassail_global = {
   \key d \dorian
   \time 4/4
@@ -123,4 +126,48 @@ wassail_lyrics = \markup \large {
 
     }
   
+}
+
+\bookpart {
+  \header {
+    title = "Wassail Song"
+    composer = "Traditional"
+    instrument = "Piano"
+  }
+  \tocItem \markup "Wassail Song"
+  \score {
+    <<
+      \new ChordNames \wassail_chordNames
+      \new Staff { \wassail_tenor }
+      
+  
+        \addlyrics { \wassail_verseOne }
+        \addlyrics { \wassail_verseTwo }
+        \addlyrics { \wassail_verseThree }
+        \addlyrics { \wassail_verseFour }
+        \addlyrics { \wassail_verseFive }
+      \new Staff <<
+        \new Voice { \voiceOne \wassail_basso }
+        \new Voice { \voiceOne \wassail_bass }
+      >>
+    >>    
+  
+  }
+}
+
+\bookpart {
+  \header {
+    title = "Wassail Song"
+    composer = "Traditional"
+    instrument = "Chords"
+  }
+  \score {
+    <<
+      \new ChordNames \wassail_chordNames
+      \new Staff { \wassail_tenor }
+      \addlyrics { \wassail_verseOne }
+    >>    
+  
+  }
+  \wassail_lyrics
 }

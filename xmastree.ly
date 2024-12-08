@@ -1,3 +1,5 @@
+\version "2.22.1"
+\language "english"
 
 xmastree_global = {
   \key f \major
@@ -122,4 +124,44 @@ xmastree_lyrics = \markup \large {
         \line { "O Christmas Tree, O Christmas Tree," }
         \line { "We learn from all your beauty;"}
     }
+}
+
+\bookpart {
+  \header {
+    title = "O Christmas Tree"
+    instrument = "Piano"
+  }
+  \tocItem \markup "O Christmas Tree"
+  \score {
+    <<
+      \new ChordNames \xmastree_chordNames
+      \new ChoirStaff <<
+        \new Staff <<
+          \new Voice { \voiceOne \xmastree_melody }
+          \addlyrics { \xmastree_verseOne }
+          \addlyrics { \xmastree_verseTwo }
+          \addlyrics { \xmastree_verseThree }
+          \new Voice { \voiceTwo \xmastree_accRight }
+        >>
+        \new Staff { \clef bass \xmastree_accLeft }
+      >>
+    >>
+    \layout { }
+  }
+}
+
+\bookpart {
+  \header {
+    title = "O Christmas Tree"
+    instrument = "Chords"
+  }
+  \score {
+    <<
+      \new ChordNames \xmastree_chordNames
+      \new Staff  { \xmastree_melody }
+      \addlyrics { \xmastree_verseOne }
+
+    >>
+  }
+  \xmastree_lyrics
 }

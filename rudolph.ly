@@ -1,3 +1,5 @@
+\version "2.22.1"
+\language "english"
 
 rudolph_global = {
   \key c \major
@@ -61,4 +63,19 @@ rudolph_verseOne = \lyricmode {
   Ru -- dolph the red -- nosed rein -- deer,
   you'll go down in his -- to -- ry.
 
+}
+\bookpart {
+  \header {
+    title = "Rudolph the Red-nosed Reindeer"
+    instrument = "Chords"
+  }
+  \tocItem \markup "Rudolph the Red-nosed Reindeer"
+  \score {
+    <<
+      \new ChordNames \rudolph_chordNames
+      \new Staff { \rudolph_melody }
+      \addlyrics { \rudolph_verseOne }
+    >>
+    \layout { }
+  }
 }

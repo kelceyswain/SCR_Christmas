@@ -1,3 +1,6 @@
+\version "2.22.1"
+\language "english"
+
 gaudete_global = {
   \key f\major
   \time 4/4
@@ -60,4 +63,26 @@ gaudete_lyrics = \markup \large {
       \line { \bold "4. Gaudete, gaudete, Christus est natus ex Maria Virgine, Gaudete!" }
       \line { "Ergo nostra contio psallat iam lustro, Denedicat Domino, salus Regi nostro." }
     }
+}
+
+\bookpart {
+  \header {
+    title = "Gaudete"
+    composer = "Piæ Cantiones"
+  }
+  \tocItem \markup "Gaudete"
+  \score {
+    <<
+     \new ChoirStaff <<
+        \new Staff <<
+          \new Voice = "sopranos" { \voiceOne << \gaudete_global \gaudete_melody >> }
+          \addlyrics { \gaudete_verseOne }
+          \addlyrics { \gaudete_verseTwo }
+          \addlyrics { \gaudete_verseThree }
+          \addlyrics { \gaudete_verseFour }
+       >>
+     >>
+    >>
+  }
+  \gaudete_lyrics
 }

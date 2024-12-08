@@ -1,3 +1,5 @@
+\version "2.22.1"
+\language "english"
 
 gower_global = {
   \key a \minor
@@ -51,4 +53,23 @@ gower_verseTwo = \lyricmode {
    We know by the stars that we are not too far.
    We know by the ground that we _ are with -- in sound.
    
+}
+
+\bookpart {
+  \header {
+    title = "Gower Wassail"
+    composer = "Traditional"
+  }
+  \tocItem \markup "Gower Wassail"
+  \score {
+    <<
+      \new ChordNames \gower_chordNames
+      %\new FretBoards \chordNames
+      \new Staff { \gower_melody }
+      
+      \addlyrics { \gower_verseOne }
+      \addlyrics { \gower_verseTwo }
+  
+      >>    
+  }
 }

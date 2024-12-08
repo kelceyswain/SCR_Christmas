@@ -1,3 +1,6 @@
+\version "2.22.1"
+\language "english"
+
 grymg_global = {
     \key e \minor
     \time 4/4
@@ -91,5 +94,45 @@ grymg_lyrics = \markup \large {
       \line { \italic "O tidings of comfort and joy, comfort and joy," }
       \line { \italic "O tidings of comfort and joy." }
     }
+}
+
+\bookpart {
+  \header {
+    title = "God Rest You Merry Gentlemen"
+    composer = "Traditional"
+    subtitle = "Piano"
+  }
+  \tocItem \markup "God Rest You Merry Gentlemen"
+  \score {
+    <<
+      \new ChoirStaff <<
+        \new Staff <<
+          \new Voice { \voiceOne \grymg_melody }
+          \addlyrics { \grymg_verseOne }
+          \addlyrics { \grymg_verseTwo }
+          \addlyrics { \grymg_verseThree }
+          \new Voice { \voiceTwo \grymg_accRight }
+        >>
+        \new Staff { \clef bass \grymg_accLeft }
+      >>
+    >>
+  }
+}
+
+\bookpart {
+  \header {
+    title = "God Rest You Merry Gentlemen"
+    composer = "Traditional"
+    instrument = "Chords"
+  }
+
+  \score {
+    <<
+      \new ChordNames \grymg_chordNames
+      \new Staff { \grymg_melody }
+      \addlyrics { \grymg_verseOne }
+    >>
+  }
   
+   \grymg_lyrics
 }

@@ -1,3 +1,6 @@
+\version "2.22.1"
+\language "english"
+
 herewecome_global = {
   \key d \major
   \numericTimeSignature
@@ -127,4 +130,50 @@ herewecome_lyrics = \markup \large {
       \line { \italic "And God send you a Happy New Year,"}
       \line { "\n" }
     }
+}
+
+\bookpart {
+  \header {
+    title = "Here We Come A-wassailing"
+    instrument = "Piano"
+    composer = "Traditional"
+  }
+  \tocItem \markup "Here We Come A-wassailing"
+  \score {
+    <<
+      \new ChordNames \herewecome_chordNames
+      \new ChoirStaff <<
+        \new Staff <<
+          \new Voice { \voiceOne \herewecome_melody }
+          \addlyrics { \herewecome_verseOne }
+          \addlyrics { \herewecome_verseTwo }
+          \addlyrics { \herewecome_verseThree }
+          \addlyrics { \herewecome_verseFour }
+          \addlyrics { \herewecome_verseFive }
+          \new Voice { \voiceTwo \herewecome_accRight }
+        >>
+        \new Staff { \clef bass \herewecome_accLeft }
+      >>
+    >>
+    \layout { }
+  }
+}
+
+
+\bookpart {
+  \header {
+    title = "Here We Come A-wassailing"
+    instrument = "Chords"
+    composer = "Traditional"
+  }
+  \score {
+    <<
+      \new ChordNames \herewecome_chordNames
+      \new Staff { \herewecome_melody }
+      \addlyrics { \herewecome_verseOne }
+    >>
+    \layout { }
+  }
+  \herewecome_lyrics
+
 }
