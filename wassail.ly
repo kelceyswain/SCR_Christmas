@@ -108,7 +108,7 @@ wassail_lyrics = \markup \large {
       \line { "\n" }
       \line { \bold "2. O master and mistress, oh are you within?" }
       \line { "Pray open the doorknob and let us all come in." }
-      \line { "O master and mistress sitting sitting by the fire," }
+      \line { "O master and mistress sitting by the fire," }
       \line { "O won't you see us wassailers atravelling in the mire." }
       \line { \italic "To you a wassail, aye and joy come to our jolly wassail." }
       \line { "\n" }
@@ -118,7 +118,7 @@ wassail_lyrics = \markup \large {
       \line { "And a drop of strong beer will do us now harm." }
       \line { \italic "To you a wassail, aye and joy come to our jolly wassail." }
       \line { "\n"  }
-      \line { \bold "4. So here's to the maid in the lily-shite smock," }
+      \line { \bold "4. So here's to the maid in the lily-white smock," }
       \line { "Who tripped to the door and pulled back the lock." }
       \line { "Who tripped to the door and pulled back on the pin," }
       \line { "For to let these jolly wassailers in." }
